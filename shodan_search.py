@@ -54,7 +54,7 @@ def get_Vulner(api,keyword,lib=None):
             else:
                 filename = lib+"/关于{}的漏洞列表".format("此关键字")+'.txt'
             fileobj = open(filename,'w',encoding="utf-8")
-            fileobj.write("检索到漏洞的条数:{}".format(vulners["total"]))
+            fileobj.write("检索到漏洞的条数:{}\n".format(vulners["total"]))
             for vulner in vulners["matches"]:
                 fileobj.write(str(vulner)+"\n")
         except Exception as e:

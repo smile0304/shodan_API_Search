@@ -1,5 +1,5 @@
 
 
 # Set your shodan APIKEY
-API_KEY = "J7PEydF391UV00v9PNaG9MEUrqAtgdrZ"
+API_KEY = "N3dtO8cIq1PpeSJ5mt1yh25dSzBCBqwg"
 

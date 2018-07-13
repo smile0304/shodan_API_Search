@@ -1,8 +1,11 @@
-import shodan
 import optparse
 import sys
 import os
+import shodan
+import json
+import collections
 from config import API_KEY
+from search import Shodan_sort
 
 
 def initconnect():
@@ -10,7 +13,7 @@ def initconnect():
     init SHODAN_API_KEY
     :return: api
     """
-    api = shodan.Shodan(API_KEY)
+    api = Shodan_sort(API_KEY)
     return api
 
 
@@ -22,11 +25,12 @@ def keyword_search(api, keyword, limit):
     :return: results
     """
     vulner_number = []
-    results = api.search(keyword,limit=limit)
+    results = collections.OrderedDict(api.search(keyword,limit=limit))
     return results
 
 
 def input_result(keyword, results,lib=None):
+    #print(json.dumps(results['matches'][0], indent=4))
     if lib is None:
         filename = "search_result.txt"
     else:
@@ -54,7 +58,7 @@ def get_Vulner(api,keyword,lib=None):
             else:
                 filename = lib+"/关于{}的漏洞列表".format("此关键字")+'.txt'
             fileobj = open(filename,'w',encoding="utf-8")
-            fileobj.write("检索到漏洞的条数:{}\n".format(vulners["total"]))
+            fileobj.write("检索到漏洞和exp的总条数:{}\n".format(vulners["total"]))
             for vulner in vulners["matches"]:
                 fileobj.write(str(vulner)+"\n")
         except Exception as e:
@@ -77,6 +81,7 @@ def get_file(api,filename):
         input_result(all[1],results,lib=lib)
         get_Vulner(api,all[1],lib=lib)
     fileobj.close()
+
 
 if __name__ == "__main__":
     parser = optparse.OptionParser("usage:%prog wait")

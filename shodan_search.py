@@ -54,9 +54,9 @@ def get_Vulner(api,keyword,lib=None):
     else:
         try:
             if lib is None:
-                filename = "关于{}的漏洞".format("此关键字")+'.txt'
+                filename = "cve_exp"+'.txt'
             else:
-                filename = lib+"/关于{}的漏洞列表".format("此关键字")+'.txt'
+                filename = lib+"/cve_exp"+'.txt'
             fileobj = open(filename,'w',encoding="utf-8")
             fileobj.write("检索到漏洞和exp的总条数:{}\n".format(vulners["total"]))
             for vulner in vulners["matches"]:

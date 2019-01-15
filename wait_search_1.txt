@@ -1,0 +1,8 @@
+dir-850l:::router:::dir-850l:::D-Link
+dir-815:::router:::dir-815:::D-Link
+DVR:::camera:::DVR:::DVR
+GPON:::router:::GPON:::GPON
+DSR-250N:::vpn:::DSR_250N:::D-Link
+DSR-500N:::vpn:::DSR_500N:::D-Link
+DSR-1000:::vpn:::DSR_1000:::D-Link
+DSR-1000N:::vpn:::DSR_1000N:::D-Link

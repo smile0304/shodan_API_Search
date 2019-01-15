@@ -1,5 +1,7 @@
 
 
 # Set your shodan APIKEY
-API_KEY = "N3dtO8cIq1PpeSJ5mt1yh25dSzBCBqwg"
+API_KEY = "BENYBawPUnsvu3HqvuwP6QI3vNLWVuyD"
 
+# Set your save result lib
+LIB_DIR = "IOT"

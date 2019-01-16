@@ -77,7 +77,7 @@ def get_file(api, filename):
         all_info = line.split(":::")
         if len(all_info) != 4:
             assert "Read file error"
-        keyword = all_info[0].strip()
+        keyword = all_info[0]
         out_dir = general_savelib(all_info[1].strip())
         dev_info = Device_info(out_dir, all_info[2].strip(), all_info[3].strip())
         results = keyword_search(api, keyword)
